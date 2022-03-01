@@ -96,7 +96,7 @@ class RoomController extends Controller
     {
         $id = decrypt($id);
         $room = Room::find($id);
-        $teachers = RoomTeacher::where('room_id', 'id')->get();
+        $teachers = RoomTeacher::where('room_id', $id)->get();
         foreach($teachers as $teacher){
             $teacher->delete();
         }

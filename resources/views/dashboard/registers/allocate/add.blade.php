@@ -28,7 +28,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h6 class="card-title">Room and Session Details</h6>
+            <h6 class="card-title">Allocate room and session</h6>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -62,7 +62,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h6 class="card-title">Slots in the selected session</h6>
+            <h6 class="card-title">Allocate Session Slots</h6>
             <div class="table-responsive pt-3">
               <table id="dataTableExample" class="table table-hover">
                 <thead>
