@@ -10,6 +10,8 @@ use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use App\Models\Teacher;
 use App\Models\Room;
+use App\Models\Session;
+use App\Models\Slot;
 use App\Models\Register;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\Hash;
@@ -129,6 +131,10 @@ class PermissionSeeder extends Seeder
                 'name' => 'Add/Edit Slot',
                 'guard_name' => 'web',
             ],
+            [
+                'name' => 'Allocate Session',
+                'guard_name' => 'web',
+            ],
         ]);
 
         $super_admin = Role::create(['name' => 'Super Admin',
@@ -158,6 +164,7 @@ class PermissionSeeder extends Seeder
                                     'Edit Session', 
                                     'Delete Session',
                                     'Add/Edit Slot', 
+                                    'Allocate Session',
         ]);
         
         $faker = Faker::create();
@@ -190,6 +197,21 @@ class PermissionSeeder extends Seeder
                 'child_date_of_birth' => Carbon::instance($faker->dateTimeBetween('-10 years','-1 years')),
                 'family1_name' => $faker->name,
             ]);
+        }
+
+        foreach (range(1,5) as $index) {
+            Session::create([
+                'name' => $faker->words(1, true),
+            ]);
+            
+            foreach (range(1,$faker->randomDigit()) as $index1) {
+                Slot::create([
+                    'day' => $faker->dayOfWeek(),
+                    'start' => $faker->time(),
+                    'end' => $faker->time(),
+                    'session_id' => $index,
+                ]);
+            }
         }
     }
 }

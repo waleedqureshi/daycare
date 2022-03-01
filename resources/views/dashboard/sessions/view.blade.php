@@ -41,7 +41,7 @@
             </div>
             @can('Add Sessions')
               <div class="col-md-6">
-                <a href="{{ url('session/add') }}" type="button" class="btn btn-primary" style="float:right;">Add Sessions</a>
+                <a href="{{ url('session/add') }}" type="button" class="btn btn-primary" style="float:right;">Add Session</a>
               </div>
             @endcan
           </div>

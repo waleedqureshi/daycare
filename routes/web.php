@@ -71,6 +71,10 @@ Route::group(['middleware' => 'auth', 'prevent-back-history'], function () {
     Route::post('/session/update/{id}', [App\Http\Controllers\SessionController::class, 'update'])->middleware('can:Edit Session');
     Route::get('/session/destroy/{id}', [App\Http\Controllers\SessionController::class, 'destroy'])->middleware('can:Delete Session');
     Route::post('/session/slot/{id}', [App\Http\Controllers\RoomController::class, 'slot'])->middleware('can:Add/Edit Slots');
+    Route::get('/session/allocate/{id}', [App\Http\Controllers\SessionController::class, 'allocate'])->middleware('can:Allocate Session');
+    Route::post('/session/allocate/store/', [App\Http\Controllers\SessionController::class, 'allocate_store'])->middleware('can:Allocate Session');
+    Route::post('/session/allocate/update_slots', [App\Http\Controllers\SessionController::class, 'update_slots'])->middleware('can:Allocate Session');
+    
     
     //Slot Routes
     Route::get('/slot/view/{id}', [App\Http\Controllers\SlotController::class, 'view']);

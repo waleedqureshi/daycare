@@ -79,7 +79,7 @@
                 @canany(['View Session'])
                     <li class="nav-item {{ active_class(['session/*']) }} {{ active_class(['slot/*']) }}">
                         <a href="{{ url('session/view') }}" class="nav-link">
-                            <i class="link-icon" data-feather="pen-tool"></i>
+                            <i class="link-icon mdi mdi-calendar-clock"></i>
                             <span class="link-title">Sessions</span>
                         </a>
                     </li>

@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Carbon;
 
-class Session extends Model
+class Allocation extends Model
 {
     use HasFactory;
 
-    public function slots()
+    public function slot()
     {
-        return $this->hasMany(Slot::class, 'session_id', 'id')->orderBy('day', 'ASC');
+        return $this->hasOne(Slot::class, 'id' , 'slot_id');
     }
 }
