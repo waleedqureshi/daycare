@@ -59,12 +59,12 @@
                 @foreach($allocations as $serial => $allocation)
                 <tr>
                   <td>{{$serial+1}}</td>
-                  <td>{{$allocation->room->name}}</td>
-                  <td>{{$allocation->slot->session->name}}</td>
-                  <td>{{$allocation->slot->day}}</td>
-                  <td>{{$allocation->slot->start}}</td>
-                  <td>{{$allocation->slot->end}}</td>
-                  <td>{{$allocation->total}}</td>
+                  <td>{{$allocation->room}}</td>
+                  <td>{{$allocation->session}}</td>
+                  <td>{{$allocation->day}}</td>
+                  <td>{{$allocation->start}}</td>
+                  <td>{{$allocation->end}}</td>
+                  <td>{{$allocation->Occupied}}</td>
                 </tr>
                 @endforeach
               </tbody>
