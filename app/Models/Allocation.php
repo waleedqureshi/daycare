@@ -13,4 +13,12 @@ class Allocation extends Model
     {
         return $this->hasOne(Slot::class, 'id' , 'slot_id');
     }
+    public function room()
+    {
+        return $this->hasOne(Room::class, 'id' , 'room_id');
+    }
+    public function register()
+    {
+        return $this->hasOne(Register::class, 'id' , 'register_id');
+    }
 }

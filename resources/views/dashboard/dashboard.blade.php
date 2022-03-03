@@ -24,7 +24,21 @@
     @endif
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
-            <h4 class="mb-3 mb-md-0">Welcome to Dashboard!</h4>
+            <h4 class="mb-3 mb-md-0">Welcome to Paradise Daycare Portal!</h4>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{url('/occupancy')}}">
+                <div class="card text-white bg-info">
+                    <div class="card-header">Details</div>
+                    <div class="card-body">
+                    <h5 class="card-title">Occupancy Details</h5>
+                    <p class="card-text">Click here to view the detailed occupancy sheet agains rooms, sessions and slots.</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
       

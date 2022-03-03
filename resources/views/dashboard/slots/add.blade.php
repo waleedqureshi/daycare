@@ -38,7 +38,7 @@
                   <select required class="js-example-basic-single w-100" id="day" name="day">
                     <option selected value="">Select</option>
                     <option>Monday</option>
-                    <option>Teusday</option>
+                    <option>Tuesday</option>
                     <option>Wednesday</option>
                     <option>Thursday</option>
                     <option>Friday</option>
