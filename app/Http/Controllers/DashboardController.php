@@ -54,7 +54,7 @@ class DashboardController extends Controller
     {
         $allocations = Allocation::where('room_id', $request->room_id)->where('slot_id', $request->slot_id)->get();
         $content = '';
-        $date = Carbon::parse($request->date)->format('y-m-d');
+        $date = $request->date;
 
         foreach($allocations as $serial => $allocation){
             $content .= '<tr class="child_rows">';
@@ -95,7 +95,7 @@ class DashboardController extends Controller
     }
 
     public function save(Request $request){
-        $date = Carbon::parse($request->date)->format('y-m-d');
+        $date = $request->date;
         foreach($request->allocation_ids as $key => $id){
             $attendance_value = $request->input('attendance_'.$key);
             $attendance = Attendance::firstOrCreate(

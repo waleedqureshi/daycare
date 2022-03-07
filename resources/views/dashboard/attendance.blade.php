@@ -180,7 +180,11 @@
           content += '       </div>';
           content += '      </div>';
           $('.date_div').append(content);
-          $('#date').datepicker();
+          $('#date').datepicker({
+                format: "yyyy-mm-dd",
+                todayHighlight: true,
+                autoclose: true,
+          });
           feather.replace();
         },
         error:function(){
