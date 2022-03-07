@@ -167,51 +167,51 @@ class PermissionSeeder extends Seeder
                                     'Allocate Session',
         ]);
         
-        $faker = Faker::create();
-    	foreach (range(1,10) as $index) {
-            $user = User::create([
-                'name' => $faker->name,
-                'email' => $faker->email,
-                'password' => Hash::make('password123'),
-            ]);
+        // $faker = Faker::create();
+    	// foreach (range(1,10) as $index) {
+        //     $user = User::create([
+        //         'name' => $faker->name,
+        //         'email' => $faker->email,
+        //         'password' => Hash::make('password123'),
+        //     ]);
 
-            $user->assignRole($admin);
-        }
+        //     $user->assignRole($admin);
+        // }
 
-        foreach (range(1,10) as $index) {
-            Teacher::create([
-                'name' => $faker->name($gender = 'female'),
-            ]);
-        }
+        // foreach (range(1,10) as $index) {
+        //     Teacher::create([
+        //         'name' => $faker->name($gender = 'female'),
+        //     ]);
+        // }
 
-        foreach (range(1,10) as $index) {
-            Room::create([
-                'name' => $faker->words(3, true),
-                'capacity'=> $faker->randomDigit(),
-            ]);
-        }
+        // foreach (range(1,10) as $index) {
+        //     Room::create([
+        //         'name' => $faker->words(3, true),
+        //         'capacity'=> $faker->randomDigit(),
+        //     ]);
+        // }
 
-        foreach (range(1,10) as $index) {
-            Register::create([
-                'child_name' => $faker->firstName,
-                'child_date_of_birth' => Carbon::instance($faker->dateTimeBetween('-10 years','-1 years')),
-                'family1_name' => $faker->name,
-            ]);
-        }
+        // foreach (range(1,10) as $index) {
+        //     Register::create([
+        //         'child_name' => $faker->firstName,
+        //         'child_date_of_birth' => Carbon::instance($faker->dateTimeBetween('-10 years','-1 years')),
+        //         'family1_name' => $faker->name,
+        //     ]);
+        // }
 
-        foreach (range(1,5) as $index) {
-            Session::create([
-                'name' => $faker->words(1, true),
-            ]);
+        // foreach (range(1,5) as $index) {
+        //     Session::create([
+        //         'name' => $faker->words(1, true),
+        //     ]);
             
-            foreach (range(1,$faker->randomDigit()) as $index1) {
-                Slot::create([
-                    'day' => $faker->dayOfWeek(),
-                    'start' => $faker->time(),
-                    'end' => $faker->time(),
-                    'session_id' => $index,
-                ]);
-            }
-        }
+        //     foreach (range(1,$faker->randomDigit()) as $index1) {
+        //         Slot::create([
+        //             'day' => $faker->dayOfWeek(),
+        //             'start' => $faker->time(),
+        //             'end' => $faker->time(),
+        //             'session_id' => $index,
+        //         ]);
+        //     }
+        // }
     }
 }
