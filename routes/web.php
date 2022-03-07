@@ -83,6 +83,10 @@ Route::group(['middleware' => 'auth', 'prevent-back-history'], function () {
     Route::post('/slot/update/{id}', [App\Http\Controllers\SlotController::class, 'update']);
     Route::get('/slot/destroy/{id}', [App\Http\Controllers\SlotController::class, 'destroy']);
 
-    //Occupancy Route
+    //Dashboard Route
     Route::get('/occupancy', [App\Http\Controllers\DashboardController::class, 'occupancy']);
+    Route::get('/attendance', [App\Http\Controllers\DashboardController::class, 'attendance']);
+    Route::post('/attendance/get_slots', [App\Http\Controllers\DashboardController::class, 'get_slots']);
+    Route::post('/attendance/get_childs', [App\Http\Controllers\DashboardController::class, 'get_childs']);
+    Route::post('/attendance/save', [App\Http\Controllers\DashboardController::class, 'save']);
 });

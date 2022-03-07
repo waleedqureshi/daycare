@@ -15,7 +15,7 @@
     <div class="sidebar-body">
         <ul class="nav">
             <li class="nav-item nav-category">Main</li>
-            <li class="nav-item {{ active_class(['/']) }}">
+            <li class="nav-item {{ active_class(['/']) }} {{ active_class(['occupancy']) }} {{ active_class(['attendance']) }}">
                 <a href="{{ url('/') }}" class="nav-link">
                     <i class="link-icon" data-feather="airplay"></i>
                     <span class="link-title">Dashboard</span>

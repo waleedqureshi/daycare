@@ -22,23 +22,32 @@
         </button>
         </div>
     @endif
-    <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+    <div class="d-flex justify-content-center align-items-center flex-wrap grid-margin">
         <div>
-            <h4 class="mb-3 mb-md-0">Welcome to Paradise Daycare Portal!</h4>
+            <h2 class="mb-3 mb-md-0">Dashboard</h2>
         </div>
     </div>
     
     <div class="row">
-        <div class="col-md-4">
-            <a href="{{url('/occupancy')}}">
-                <div class="card text-white bg-info">
-                    <div class="card-header">Details</div>
-                    <div class="card-body">
-                    <h5 class="card-title">Occupancy Details</h5>
-                    <p class="card-text">Click here to view the detailed occupancy sheet agains rooms, sessions and slots.</p>
-                    </div>
+        <div class="col-md-3"> 
+            <div class="card">
+                <img src="{{asset('assets/images/dashboard/occupancy.jpg')}}" class="card-img-top" alt="occupencies">
+                <div class="card-body">
+                <h5 class="card-title">Occupancy Details</h5>
+                <p class="card-text mb-3">Click here to view the details of occupancy sheet.</p>
+                <a href="{{url('/occupancy')}}" class="btn btn-primary">View Sheet</a>
                 </div>
-            </a>
+            </div>
+        </div>
+        <div class="col-md-3"> 
+            <div class="card">
+                <img src="{{asset('assets/images/dashboard/attendance.jpg')}}" class="card-img-top" alt="occupencies">
+                <div class="card-body">
+                <h5 class="card-title">Attendance</h5>
+                <p class="card-text mb-3">Click here to mark the attendance.</p>
+                <a href="{{url('/attendance')}}" class="btn btn-primary">Mark Attendance</a>
+                </div>
+            </div>
         </div>
     </div>
       
