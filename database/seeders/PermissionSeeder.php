@@ -135,6 +135,18 @@ class PermissionSeeder extends Seeder
                 'name' => 'Allocate Session',
                 'guard_name' => 'web',
             ],
+            [
+                'name' => 'Mark Attendance',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'View Attendance',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'View Occupancy',
+                'guard_name' => 'web',
+            ],
         ]);
 
         $super_admin = Role::create(['name' => 'Super Admin',
@@ -165,6 +177,9 @@ class PermissionSeeder extends Seeder
                                     'Delete Session',
                                     'Add/Edit Slot', 
                                     'Allocate Session',
+                                    'Mark Attendance',
+                                    'View Attendance',
+                                    'View Occupancy',
         ]);
         
         // $faker = Faker::create();

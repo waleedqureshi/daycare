@@ -74,10 +74,17 @@
                   <td>{{ ($register->child_date_of_birth) ?  ($register->child_date_of_birth) : 'N/A'}}</td>
                   <td>{{ ($register->family1_name) ?  ($register->family1_name) : 'N/A'}}</td>
                   <td class="text-center">
+                      @can('View Attendance')
+                        <a title="View Attendance" href="{{ url('register/attendance/'.encrypt($register->id)) }}">
+                          <button type="button" class="btn btn-primary btn-icon">
+                            <i class="mdi mdi-calendar-clock"></i>
+                          </button>
+                        </a>
+                      @endcan
                       @can('Allocate Session')
                         <a title="Allocate Session" href="{{ url('session/allocate/'.encrypt($register->id)) }}">
                           <button type="button" class="btn btn-primary btn-icon">
-                            <i class="mdi mdi-calendar-clock"></i>
+                            <i data-feather="share"></i>
                           </button>
                         </a>
                       @endcan

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Register extends Model
 {
     use HasFactory;
+
+    public function allocations()
+    {
+        return $this->hasMany(Allocation::class, 'register_id', 'id');
+    }
 }

@@ -105,6 +105,6 @@ class DashboardController extends Controller
             $attendance->save();
         }
 
-        return redirect('/')->with('success', 'Attendance for mentioned details has been marked');
+        return back()->with('success', 'Attendance for mentioned details has been marked');
     }
 }

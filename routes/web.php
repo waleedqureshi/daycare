@@ -45,6 +45,8 @@ Route::group(['middleware' => 'auth', 'prevent-back-history'], function () {
     Route::get('/register/edit/{id}', [App\Http\Controllers\RegisterController::class, 'edit'])->middleware('can:Edit Register');
     Route::post('/register/update/{id}', [App\Http\Controllers\RegisterController::class, 'update'])->middleware('can:Edit Register');
     Route::get('/register/destroy/{id}', [App\Http\Controllers\RegisterController::class, 'destroy'])->middleware('can:Delete Register');
+    Route::get('/register/attendance/{id}', [App\Http\Controllers\RegisterController::class, 'attendance'])->middleware('can:View Attendance            ');
+    
 
     //Teacher Routes
     Route::get('/teacher/view', [App\Http\Controllers\TeacherController::class, 'view'])->middleware('can:View Teacher');
@@ -84,9 +86,9 @@ Route::group(['middleware' => 'auth', 'prevent-back-history'], function () {
     Route::get('/slot/destroy/{id}', [App\Http\Controllers\SlotController::class, 'destroy']);
 
     //Dashboard Route
-    Route::get('/occupancy', [App\Http\Controllers\DashboardController::class, 'occupancy']);
-    Route::get('/attendance', [App\Http\Controllers\DashboardController::class, 'attendance']);
+    Route::get('/occupancy', [App\Http\Controllers\DashboardController::class, 'occupancy'])->middleware('can:View Occupancy');
+    Route::get('/attendance', [App\Http\Controllers\DashboardController::class, 'attendance'])->middleware('can:Mark Attendance');
     Route::post('/attendance/get_slots', [App\Http\Controllers\DashboardController::class, 'get_slots']);
     Route::post('/attendance/get_childs', [App\Http\Controllers\DashboardController::class, 'get_childs']);
-    Route::post('/attendance/save', [App\Http\Controllers\DashboardController::class, 'save']);
+    Route::post('/attendance/save', [App\Http\Controllers\DashboardController::class, 'save'])->middleware('can:Mark Attendance');
 });

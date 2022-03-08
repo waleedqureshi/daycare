@@ -29,26 +29,31 @@
     </div>
     
     <div class="row">
-        <div class="col-md-3"> 
-            <div class="card">
-                <img src="{{asset('assets/images/dashboard/occupancy.jpg')}}" class="card-img-top" alt="occupencies">
-                <div class="card-body">
-                <h5 class="card-title">Occupancy Details</h5>
-                <p class="card-text mb-3">Click here to view the details of occupancy sheet.</p>
-                <a href="{{url('/occupancy')}}" class="btn btn-primary">View Sheet</a>
+        @can('View Occupancy')
+            <div class="col-md-3"> 
+                <div class="card">
+                    <img src="{{asset('assets/images/dashboard/occupancy.jpg')}}" class="card-img-top" alt="occupencies">
+                    <div class="card-body">
+                    <h5 class="card-title">Occupancy Details</h5>
+                    <p class="card-text mb-3">Click here to view the details of occupancy sheet.</p>
+                    <a href="{{url('/occupancy')}}" class="btn btn-primary">View Sheet</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3"> 
-            <div class="card">
-                <img src="{{asset('assets/images/dashboard/attendance.jpg')}}" class="card-img-top" alt="occupencies">
-                <div class="card-body">
-                <h5 class="card-title">Attendance</h5>
-                <p class="card-text mb-3">Click here to mark the attendance.</p>
-                <a href="{{url('/attendance')}}" class="btn btn-primary">Mark Attendance</a>
+        @endcan
+        
+        @can('Mark Attendance')
+            <div class="col-md-3"> 
+                <div class="card">
+                    <img src="{{asset('assets/images/dashboard/attendance.jpg')}}" class="card-img-top" alt="occupencies">
+                    <div class="card-body">
+                    <h5 class="card-title">Attendance</h5>
+                    <p class="card-text mb-3">Click here to mark the attendance.</p>
+                    <a href="{{url('/attendance')}}" class="btn btn-primary">Mark Attendance</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endcan
     </div>
       
 @endsection

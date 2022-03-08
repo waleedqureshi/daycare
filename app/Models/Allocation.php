@@ -21,4 +21,9 @@ class Allocation extends Model
     {
         return $this->hasOne(Register::class, 'id' , 'register_id');
     }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'allocation_id' , 'id');
+    }
 }

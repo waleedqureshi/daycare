@@ -7,6 +7,7 @@ use App\Models\Teacher;
 use App\Models\Room;
 use App\Models\RoomTeacher;
 use App\Models\Register;
+use App\Models\Attendance;
 use Illuminate\Support\Facades\File;
 
 class RegisterController extends Controller
@@ -238,5 +239,15 @@ class RegisterController extends Controller
 
         $register->delete();
         return redirect('register/view')->with('success','Register has been deleted.');
+    }
+
+    public function attendance($id)
+    {
+        $id = decrypt($id);
+        $register = Register::find($id);
+        $allocations = $register->allocations->pluck('id');
+        $attendances = Attendance::whereIn('allocation_id', $allocations)->orderBy('date')->get();
+        // dd($attendances);
+        return view('dashboard.registers.attendance', compact('attendances'));
     }
 }
