@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Super Admin',
             'email' => 'superadmin@paradisedaycare.co.uk',
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make('paradisedaycare123'),
         ]);
     }
 }
