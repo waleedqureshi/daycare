@@ -182,22 +182,22 @@ class PermissionSeeder extends Seeder
                                     'View Occupancy',
         ]);
         
-        // $faker = Faker::create();
-    	// foreach (range(1,10) as $index) {
-        //     $user = User::create([
-        //         'name' => $faker->name,
-        //         'email' => $faker->email,
-        //         'password' => Hash::make('password123'),
-        //     ]);
+        $faker = Faker::create();
+    	foreach (range(1,10) as $index) {
+            $user = User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => Hash::make('password123'),
+            ]);
 
-        //     $user->assignRole($admin);
-        // }
+            $user->assignRole($admin);
+        }
 
-        // foreach (range(1,10) as $index) {
-        //     Teacher::create([
-        //         'name' => $faker->name($gender = 'female'),
-        //     ]);
-        // }
+        foreach (range(1,10) as $index) {
+            Teacher::create([
+                'name' => $faker->name($gender = 'female'),
+            ]);
+        }
 
         // foreach (range(1,10) as $index) {
         //     Room::create([
@@ -206,13 +206,13 @@ class PermissionSeeder extends Seeder
         //     ]);
         // }
 
-        // foreach (range(1,10) as $index) {
-        //     Register::create([
-        //         'child_name' => $faker->firstName,
-        //         'child_date_of_birth' => Carbon::instance($faker->dateTimeBetween('-10 years','-1 years')),
-        //         'family1_name' => $faker->name,
-        //     ]);
-        // }
+        foreach (range(1,10) as $index) {
+            Register::create([
+                'child_name' => $faker->firstName,
+                'child_date_of_birth' => Carbon::instance($faker->dateTimeBetween('-10 years','-1 years')),
+                'family1_name' => $faker->name,
+            ]);
+        }
 
         // foreach (range(1,5) as $index) {
         //     Session::create([
